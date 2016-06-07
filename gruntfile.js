@@ -9,7 +9,6 @@ module.exports = function(grunt) {
     // Variables
     var gulp = require('gulp'),
         styleguide = require('sc5-styleguide'),
-        buildPath = './src',
         kodekitPath = '../kodekit-ui/src',
         styleguideAppRoot = './docs',
         srcPath = 'src',
@@ -24,26 +23,6 @@ module.exports = function(grunt) {
         distPath: distPath,
         docsPath: docsPath,
 
-        // Iconfont
-        webfont: {
-            icons: {
-                src: [
-                    'node_modules/open-iconic/svg/*.svg',
-                    '<%= srcPath %>/icons/*.svg'
-                ],
-                dest: '<%= distPath %>/fonts/koowa-icons',
-                destCss: '<%= srcPath %>/scss/utilities',
-                options: {
-                    font: 'koowa-icons',
-                    hashes: false,
-                    stylesheet: 'scss',
-                    relativeFontPath: '../fonts/icons/',
-                    template: '<%= srcPath %>/icons/template.css',
-                    htmlDemo: false
-                }
-            }
-        },
-
 
         // Compile sass files
         sass: {
@@ -52,7 +31,8 @@ module.exports = function(grunt) {
                     '<%= distPath %>/css/joomlatools-ui.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
                     '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
                     '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
-                    '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
+                    '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss',
+                    '<%= docsPath %>/joomlatools/css/docs.css': 'docs-src/docs.scss'
                 }
             }
         },
@@ -87,33 +67,6 @@ module.exports = function(grunt) {
         },
 
 
-        // Modernizr
-        modernizr: {
-            dist: {
-                "cache": true,
-
-                "dest": "<%= distPath %>/js/build/modernizr.js",
-                "options": [
-                    "html5shiv",
-                    "prefixedCSS",
-                    "setClasses"
-                ],
-                "uglify": false,
-                "tests": [
-                    "appearance",
-                    "checked",
-                    "flexbox",
-                    "flexboxlegacy",
-                    "flexboxtweener",
-                    "flexwrap"
-                ],
-                "crawl" : false,
-                "customTests" : [],
-                "classPrefix": "k-"
-            }
-        },
-
-
         // Gulp commands
         gulp: {
             'styleguide-generate': function() {
@@ -135,9 +88,14 @@ module.exports = function(grunt) {
                         previousSection: true,
                         commonClass: 'koowa koowa-container',
                         nextSection: true,
+                        styleVariables: false,
+                        readOnly: true,
                         extraHead: [
                             '<link href="joomlatools/css/joomlatools-ui.css" rel="stylesheet" type="text/css">',
-                            '<script src="joomlatools/js/modernizr.js"></script>'
+                            '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
+                            '<script src="joomlatools/js/modernizr.js"></script>',
+                            '<script src="joomlatools/js/jquery.js"></script>',
+                            '<script src="joomlatools/js/loadjs.js"></script>'
                         ],
                         afterBody: [
                             '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>'
@@ -145,20 +103,29 @@ module.exports = function(grunt) {
                         server: true
                     }
                 )).pipe(gulp.dest(styleguideAppRoot)); // This is where the styleguide source files get rendered
-            },
-            'styleguide-applystyles': function() {
-                return gulp.src([
-                    'css/joomlatools-ui.css'
-                ])
-                .pipe(styleguide.applyStyles())
-                .pipe(gulp.dest(styleguideAppRoot));
             }
         },
 
 
         // Copy
         copy: {
-            joomlatoolsToDocs: {
+            KUItoJUI: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['../kodekit-ui/dist/fonts/koowa-icons/*.*'],
+                        dest: '<%= distPath %>/fonts/koowa-icons',
+                        flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: ['../kodekit-ui/dist/js/*.*'],
+                        dest: '<%= distPath %>/js',
+                        flatten: true
+                    }
+                ]
+            },
+            JUItoDocs: {
                 files: [
                     {
                         expand: true,
@@ -168,7 +135,7 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['<%= distPath %>/js/build/modernizr.js'],
+                        src: ['<%= distPath %>/js/*.*', 'docs-src/loadjs.js'],
                         dest: '<%= docsPath %>/joomlatools/js',
                         flatten: true
                     },
@@ -176,6 +143,12 @@ module.exports = function(grunt) {
                         expand: true,
                         src: ['<%= distPath %>/fonts/koowa-icons/*.*'],
                         dest: '<%= docsPath %>/joomlatools/fonts/koowa-icons',
+                        flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: ['docs-src/loadjs.js'],
+                        dest: '<%= docsPath %>/joomlatools/js',
                         flatten: true
                     }
                 ]
@@ -193,22 +166,17 @@ module.exports = function(grunt) {
 
         // Watch files
         watch: {
-            fontcustom: {
-                files: [
-                    '<%= srcPath %>/icons/*.svg'
-                ],
-                tasks: ['webfont', 'sass', 'cssmin', 'autoprefixer', 'copy'],
-                options: {
-                    interrupt: true,
-                    atBegin: false
-                }
-            },
             sass: {
                 files: [
+                    // Kodekit UI
+                    '../kodekit-ui/src/scss/*.scss',
+                    '../kodekit-ui/src/scss/**/*.scss',
+
+                    // Joomlatools UI
                     '<%= srcPath %>/scss/*.scss',
                     '<%= srcPath %>/scss/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy'],
+                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:JUItoDocs'],
                 options: {
                     interrupt: true,
                     atBegin: true
@@ -220,9 +188,9 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['shell', 'modernizr', 'gulp:styleguide-generate', 'gulp:styleguide-applystyles', 'watch']);
+    grunt.registerTask('default', ['shell', 'copy:KUItoJUI', 'gulp:styleguide-generate', 'watch']);
 
     // create Styleguide
-    grunt.registerTask('styleguide', ['sass', 'cssmin', 'autoprefixer', 'gulp:styleguide-generate', 'gulp:styleguide-applystyles']);
+    grunt.registerTask('styleguide', ['sass', 'copy:KUItoJUI', 'cssmin', 'autoprefixer', 'gulp:styleguide-generate']);
 
 };

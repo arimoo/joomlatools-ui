@@ -1,4 +1,4 @@
-Kodekit UI
-==========
+Joomlatools UI
+==============
 
 Add readme here

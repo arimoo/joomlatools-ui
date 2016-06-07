@@ -1,0 +1,21 @@
+/* Disable styleguide CSS view
+   ========================================================================== */
+
+[ng-if="section.css"] {
+  display: none;
+}
+
+.k-wrapper {
+  min-height: 400px;
+}
+
+.sg-design {
+  display: none;
+}
+
+.sg-flexbox {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
