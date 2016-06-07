@@ -93,8 +93,8 @@ module.exports = function(grunt) {
                         extraHead: [
                             '<link href="joomlatools/css/joomlatools-ui.css" rel="stylesheet" type="text/css">',
                             '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
-                            '<script src="joomlatools/js/modernizr.js"></script>',
-                            '<script src="joomlatools/js/jquery.js"></script>',
+                            '<script src="joomlatools/js/min/modernizr.js"></script>',
+                            '<script src="joomlatools/js/min/jquery.js"></script>',
                             '<script src="joomlatools/js/loadjs.js"></script>'
                         ],
                         afterBody: [
@@ -119,8 +119,14 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['../kodekit-ui/dist/js/*.*'],
-                        dest: '<%= distPath %>/js',
+                        src: ['../kodekit-ui/dist/js/build/*.*'],
+                        dest: '<%= distPath %>/js/build',
+                        flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: ['../kodekit-ui/dist/js/min/*.*'],
+                        dest: '<%= distPath %>/js/min',
                         flatten: true
                     }
                 ]
@@ -135,8 +141,8 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['<%= distPath %>/js/*.*', 'docs-src/loadjs.js'],
-                        dest: '<%= docsPath %>/joomlatools/js',
+                        src: ['<%= distPath %>/js/min/*.*'],
+                        dest: '<%= docsPath %>/joomlatools/js/min',
                         flatten: true
                     },
                     {
