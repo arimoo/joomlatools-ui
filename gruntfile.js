@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         styleguideAppRoot = './docs',
         srcPath = 'src',
         distPath = 'dist',
-        docsPath = 'docs';
+        docsPath = 'docs',
+        bsport = 1234;
 
     // grunt config
     grunt.initConfig({
@@ -22,6 +23,27 @@ module.exports = function(grunt) {
         srcPath: srcPath,
         distPath: distPath,
         docsPath: docsPath,
+
+
+        // Browser Sync
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        "<%= distPath %>/*.*",
+                        "<%= distPath %>/**/*.*"
+                    ]
+                },
+                options: {
+                    port: bsport,
+                    server: '<%= docsPath %>',
+                    open: true,
+                    notify: false,
+                    watchTask: true,
+                    injectChanges: false
+                }
+            }
+        },
 
 
         // Compile sass files
@@ -76,7 +98,9 @@ module.exports = function(grunt) {
                     kodekitPath + '/scss/atoms/*.scss',
                     kodekitPath + '/scss/layout/*.scss',
                     kodekitPath + '/scss/molecules/*.scss',
-                    kodekitPath + '/scss/organisms/*.scss'
+                    kodekitPath + '/scss/organisms/*.scss',
+                    kodekitPath + '/scss/templates/*.scss',
+                    kodekitPath + '/scss/_shame.scss'
                 ])
                     .pipe(styleguide.generate({
                         title: 'joomlatools UI Docs',
@@ -85,22 +109,21 @@ module.exports = function(grunt) {
                         overviewPath: './src/README.md',
                         disableEncapsulation: true,
                         disableHtml5Mode: true,
-                        previousSection: true,
                         commonClass: 'koowa koowa-container',
-                        nextSection: true,
                         styleVariables: false,
                         readOnly: true,
+                        server: true,
                         extraHead: [
                             '<link href="joomlatools/css/joomlatools-ui.css" rel="stylesheet" type="text/css">',
                             '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
                             '<script src="joomlatools/js/min/modernizr.js"></script>',
                             '<script src="joomlatools/js/min/jquery.js"></script>',
-                            '<script src="joomlatools/js/loadjs.js"></script>'
+                            '<script src="joomlatools/js/loadjs.js"></script>',
+                            '<script src="joomlatools/js/styleguide.js"></script>'
                         ],
                         afterBody: [
                             '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>'
-                        ],
-                        server: true
+                        ]
                     }
                 )).pipe(gulp.dest(styleguideAppRoot)); // This is where the styleguide source files get rendered
             }
@@ -153,8 +176,14 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['docs-src/loadjs.js'],
+                        src: ['docs-src/*.js'],
                         dest: '<%= docsPath %>/joomlatools/js',
+                        flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: ['docs-src/*.png'],
+                        dest: '<%= docsPath %>/joomlatools/images',
                         flatten: true
                     }
                 ]
@@ -180,12 +209,25 @@ module.exports = function(grunt) {
 
                     // Joomlatools UI
                     '<%= srcPath %>/scss/*.scss',
-                    '<%= srcPath %>/scss/**/*.scss'
+                    '<%= srcPath %>/scss/**/*.scss',
+
+                    // Sourcefiles
+                    'docs-src/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy:JUItoDocs'],
+                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy', 'gulp'],
                 options: {
                     interrupt: true,
                     atBegin: true
+                }
+            },
+            docssrc: {
+                files: [
+                    'docs-src/*.*'
+                ],
+                tasks: ['copy'],
+                options: {
+                    interrupt: true,
+                    atBegin: false
                 }
             }
         }
