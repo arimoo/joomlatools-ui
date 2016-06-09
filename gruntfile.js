@@ -226,6 +226,17 @@ module.exports = function(grunt) {
                     atBegin: true
                 }
             },
+            uglify: {
+                files: [
+                    // Kodekit UI
+                    '../kodekit-ui/dist/js/min/*.js'
+                ],
+                tasks: ['copy'],
+                options: {
+                    interrupt: true,
+                    atBegin: false
+                }
+            },
             docssrc: {
                 files: [
                     'docs-src/*.*'
