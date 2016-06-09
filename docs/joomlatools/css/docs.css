@@ -10,6 +10,10 @@
   flex: 1 1 auto;
   overflow: hidden; }
 
+.sg-fullbox {
+  flex: 1 1 auto;
+  overflow: hidden; }
+
 .sg-section-description code {
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
   border-radius: 3px;

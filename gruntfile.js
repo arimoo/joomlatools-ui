@@ -185,6 +185,12 @@ module.exports = function(grunt) {
                         src: ['docs-src/*.png'],
                         dest: '<%= docsPath %>/joomlatools/images',
                         flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: ['docs-src/CNAME'],
+                        dest: '<%= docsPath %>',
+                        flatten: true
                     }
                 ]
             }
