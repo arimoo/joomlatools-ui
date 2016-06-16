@@ -1,2 +1,34 @@
 <h1 class="sg" name="joomlatools-ui">Joomlatools UI</h1>
-<p class="sg">Add readme here</p>
+<p class="sg">An intuitive User Interface.</p>
+<h2 class="sg" name="why">Why</h2>
+<p class="sg">We wanted to create an intuitive User Interface that could be used standalone as well as on top of Joomla.</p>
+<h3 class="sg" name="the-idea-behind-the-ui">The idea behind the UI</h3>
+<p class="sg">This is not a framework like Bootstrap is. You can&apos;t just copy paste everything anywhere. Most elements have a predefined spot.
+There are ofcourse exceptions. You can take a look at the &quot;templates&quot; page for examples to copy paste.</p>
+<p class="sg">The UI basically consists out of the following two views:</p>
+<ul>
+<li class="sg">A list view that lists a bunch of content</li>
+<li class="sg">A form view that displays a form to fill out</li>
+</ul>
+<h4 class="sg" name="the-list-view">The list view</h4>
+<p class="sg">The list view consists out of a list of items and can be accompanied by the following elements</p>
+<ul>
+<li class="sg">A left sidebar</li>
+<li class="sg">A right sidebar</li>
+<li class="sg">A toolbar</li>
+<li class="sg">Breadcrumbs</li>
+<li class="sg">A scopebar</li>
+</ul>
+<p class="sg">In the left sidebar you can find elements like a menu, a tree and quickfilters. These elements are all navigation elements to display something on the right (in the list).</p>
+<p class="sg">The toolbar should always be placed on top of the list and never on top of the sidebar since the actions in the toolbar are about the list below it, not the elements in the left sidebar. The reason that the toolbar is on top is because the actions you take (for example creating a new item) could ignore the filters that are active on the list below it. For example you could have a filtered list that only shows items with a certain category. When creating a new item you could choose to add another category.</p>
+<p class="sg">After the toolbar a breadcrumbs may follow to display which folder or category we are currently viewing. Inside this category we can filter so the scopebar is to follow next.</p>
+<p class="sg">What you end up with is a list that only show the items that meet the set filters like:</p>
+<ul>
+<li class="sg">UI page</li>
+<li class="sg">Page category / folder</li>
+<li class="sg">Page filters (user, date etc.)</li>
+</ul>
+<p class="sg">Last but not least we&apos;ve got the limit and pagination showing you there is more than the items you just saw.</p>
+<h4 class="sg" name="the-form-view">The form view</h4>
+<p class="sg">It is important to know that you should always only use a sidebar in a form view when there&apos;s autosaving enabled on the form. Otherwise poepl could lose their work.</p>
+<p class="sg">For the form you should also never place the toolbar above the sidebar.</p>

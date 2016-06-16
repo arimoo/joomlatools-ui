@@ -9,19 +9,6 @@ select {
 
 
 /**
- * 1. No text-decoration for buttons
- * 2. Bootstrap 2 uses .btn as default button. Bootstrap 3 uses .btn-default as default
-      Extending the bootstrap 3 default btn styling to the regular .btn class
- */
-
-.btn {
-  text-decoration: none; // 1
-  @extend .btn-default; // 2
-}
-
-
-
-/**
  * Joomla utilities
  * ----------------
  * these are not available outside Joomla scope (for example in koowa template)
