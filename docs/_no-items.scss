@@ -1,21 +1,19 @@
 /*
-No items alert
+No items
 
 Styled warning for when there are no items yet
 
-.active - Active item
-
 markup:
-<div class="no-items-container">
+<div class="k-no-items-container">
     <p>It seems like you don't have any items yet.</p>
-    <p><a href="#" class="k-button k-button--success">Add your first item</a></p>
+    <p><a href="javascript:void(0)" class="k-button k-button--success">Add your first item</a></p>
 </div>
 
 Styleguide 2.99
 
 */
 
-.no-items-container {
+.k-no-items-container {
   margin: 0;
   font-size: 1.5em;
   line-height: 1.5em;
