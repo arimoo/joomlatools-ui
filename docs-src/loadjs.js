@@ -1,9 +1,11 @@
 function loadjs() {
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type= 'text/javascript';
-    script.src= 'joomlatools/js/min/admin.js';
-    head.appendChild(script);
+    setTimeout(function() {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type= 'text/javascript';
+        script.src= 'joomlatools/js/min/admin.js';
+        head.appendChild(script);
+    }, 500);
 }
 
 (function($) {
