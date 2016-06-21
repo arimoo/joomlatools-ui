@@ -77,7 +77,7 @@ Preview with title
 markup:
 <!-- Preview -->
 <div class="k-card">
-    <div class="k-card__body k-card__body--preview">
+    <a class="k-card__body k-card__body--preview" href="javascript:void(0)">
         <div class="k-card__preview-content-wrapper">
             <div class="k-card__preview-content">
                 <div class="k-card__preview">
@@ -85,7 +85,7 @@ markup:
                 </div>
             </div>
         </div>
-    </div>
+    </a>
     <div class="k-card__title">
         <label><input type="checkbox"/> Title</label>
     </div>
@@ -106,7 +106,7 @@ markup:
 <div class="k-card">
     <div class="k-card__body">
         <div class="k-card__title">
-            <label><input type="checkbox"/> Title</label>
+            <label><input type="checkbox"/> <a href="javascript:void(0)">Title</a></label>
         </div>
     </div>
 </div>
@@ -126,10 +126,16 @@ Styleguide 2.20.4
 
 .k-card__body {
   @include transition;
+  display: block;
   backface-visibility: visible;
   background: colorpicker(primary, 5);
   font-size: 14px;
   border: 1px solid #ddd;
+
+  a#{&} {
+    color: $color-accent; // This is the <a> so put color here
+    cursor: pointer; // This is the <a> so put cursor here
+  }
 }
 
 .k-card__body--preview {
@@ -145,8 +151,6 @@ Styleguide 2.20.4
 .k-card__preview-content {
   width: 100%;
   height: 100%;
-  color: $color-accent; // This is the <a> so put color here
-  cursor: pointer; // This is the <a> so put cursor here
   max-height: 100%;
   overflow: hidden;
   vertical-align: middle;
@@ -199,10 +203,20 @@ Styleguide 2.20.4
 }
 
 .k-card__title {
+  display: block;
   padding: 10px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   label {
     font-weight: $regular;
     display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 1px;
   }
 }
