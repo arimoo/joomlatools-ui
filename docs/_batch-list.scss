@@ -45,6 +45,12 @@ markup:
     <div class="k-batch-list__item k-batch-list__item--field">
         <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
     </div>
+    <div class="k-batch-list__item k-batch-list__item--title">
+        <label for="docman_title0">Title:</label>
+    </div>
+    <div class="k-batch-list__item k-batch-list__item--field">
+        <input id="docman_title0" class="form-control" type="text" name="title" value="{value}">
+    </div>
 </form>
 
 Styleguide 2.45.1
