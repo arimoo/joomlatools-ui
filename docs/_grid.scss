@@ -1,116 +1,117 @@
 /*
 Grid
 
-Fluid grid system
-- Has `full`, `main` and `sub` containers
-- {unsureText}
+A complete grid
 
 markup:
-<div class="k-container">
-    <div class="k-container__full">
-        ...
+<!-- Grid -->
+<div class="k-grid-container">
+    <div class="k-grid">
+        <div class="k-grid__items">
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--folder">
+                <sg-insert>2.20.4</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+            <div class="k-grid__item k-grid__item--file">
+                <sg-insert>2.20.3</sg-insert>
+            </div>
+        </div>
     </div>
-    <div class="k-container__main">
-        ...
-    </div>
-    <div class="k-container__sub">
-        ...
-    </div>
-</div><!-- .k-container -->
+    <sg-insert>2.50.1</sg-insert>
+</div>
 
-Styleguide 3.8
+Styleguide 2.110
 
 */
 
 
-/* Container */
-
-.k-container {
-  @include clearfix;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto (-($spacing));
-  padding: $spacing ($spacing / 2);
-
-  /* When flexbox is in use */
+.k-grid-container {
+  background: $grid-background;
 
   @include flexbox {
-    flex: 0 0 auto;
-  }
-
-  @include resizing {
-    overflow: hidden;
-  }
-}
-
-
-/* --------------------------------------------------------------------------
-   Grid children
-   -------------------------------------------------------------------------- */
-
-
-/**
- * Main container
- */
-
-.k-container__main {
-  margin-bottom: $spacing;
-
-  @include breakpoint($charlie) {
-    float: left;
-    margin: 0 ($spacing / 2) $spacing;
-    width: calc(100% * 8/12 - #{$spacing});
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: auto;
   }
 }
 
-/* When a sidebar is active next to it */
+.k-grid {
+  background: $grid-background;
+  padding: $grid-spacing / 2;
+  overflow: auto;
 
-.k-sidebar + .k-content .k-container__main {
-  @include breakpoint($charlie) {
-    width: 100%;
-  }
-
-  @include breakpoint($delta) {
-    width: calc(100% * 8/12 - #{$spacing});
-    margin-bottom: 0;
-  }
-}
-
-
-/**
- * Sub container
- */
-
-.k-container__sub {
-  margin-bottom: $spacing;
-
-  @include breakpoint($charlie) {
-    float: left;
-    margin: 0 ($spacing / 2) $spacing;
-    width: calc(100% * 4/12 - #{$spacing});
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
   }
 }
 
-/* When a sidebar is active next to it */
+.k-grid__items {
+  @include clearfix;
 
-.k-sidebar + .k-content .k-container__sub {
-  @include breakpoint($charlie) {
-    width: 100%;
-  }
-
-  @include breakpoint($delta) {
-    width: calc(100% * 4/12 - #{$spacing});
-    margin-bottom: 0;
+  @include flexbox {
+    flex: 1 1 auto;
   }
 }
 
-
-/**
- * Full container
- */
-
-.k-container__full {
-  clear: both;
+.k-grid__item {
+  float: left;
+  padding: $grid-spacing / 2;
   width: 100%;
-  margin: 0 ($spacing / 2) $spacing;
+
+  @include rtl {
+    float: right;
+  }
+
+  // Set breakpoints
+  @include setGridBreakpoint;
+
+  // Selected styling
+  &.is-selected {
+    .k-card__title {
+      background: $color-accent;
+      border-color: darkest($color-accent);
+      color: $color-accent-type;
+
+      a {
+        color: $color-accent-type;
+      }
+    }
+
+    .k-card__body {
+      color: $color-accent-type;
+      border-color: darker($color-accent);
+    }
+
+    &:hover,
+    &:focus {
+      .k-card__title {
+        background: darkest($color-accent);
+      }
+    }
+  }
+}
+
+/* Make sure that the files are separated from the folders */
+.k-grid__item--folder + .k-grid__item--file {
+  clear: left;
 }
