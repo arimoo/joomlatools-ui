@@ -38,6 +38,12 @@ body.sg {
   }
 }
 
+// Flexbox container
+.sg-flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
 
 // Better code styling for in descriptions
 .sg-section-description code {
