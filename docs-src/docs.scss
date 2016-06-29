@@ -1,7 +1,9 @@
 @import "../../kodekit-ui/src/scss/core/tools";
 
 
-
+body.sg {
+  -webkit-overflow-scrolling: touch;
+}
 
 // Hide the "View CSS" area
 [ng-if="section.css"] {
@@ -14,8 +16,14 @@
   display: none;
 }
 
+
+// Lower zindex for sg labels
+.sg.sg-label {
+  z-index: 99;
+}
+
 // FLexbox all the things
-// Make sure we have a flexbox in teh styleguide fullscreen view
+// Make sure we have a flexbox in the styleguide fullscreen view
 body.sg {
   & > .view-index.ng-scope {
     & > ui-view {

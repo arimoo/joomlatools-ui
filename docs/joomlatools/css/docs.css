@@ -4,11 +4,17 @@
 /**
  * These file do not produce any CSS code on their own
  */
+body.sg {
+  -webkit-overflow-scrolling: touch; }
+
 [ng-if="section.css"] {
   display: none; }
 
 .sg-design {
   display: none; }
+
+.sg.sg-label {
+  z-index: 99; }
 
 @media (min-width: 300px) and (min-height: 391px) {
   .k-flexbox body.sg > .view-index.ng-scope > ui-view > shadow-dom div[ng-bind-html],
