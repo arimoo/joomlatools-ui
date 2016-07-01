@@ -136,8 +136,8 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['../kodekit-ui/dist/fonts/koowa-icons/*.*'],
-                        dest: '<%= distPath %>/fonts/koowa-icons',
+                        src: ['../kodekit-ui/dist/fonts/k-icons/*.*'],
+                        dest: '<%= distPath %>/fonts/k-icons',
                         flatten: true
                     },
                     {
@@ -170,8 +170,8 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['<%= distPath %>/fonts/koowa-icons/*.*'],
-                        dest: '<%= docsPath %>/joomlatools/fonts/koowa-icons',
+                        src: ['<%= distPath %>/fonts/k-icons/*.*'],
+                        dest: '<%= docsPath %>/joomlatools/fonts/k-icons',
                         flatten: true
                     },
                     {
