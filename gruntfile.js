@@ -93,7 +93,7 @@ module.exports = function(grunt) {
         gulp: {
             'styleguide-generate': function() {
                 return gulp.src([
-                    kodekitPath + '/scss/joomlatools-ui.scss',
+                    kodekitPath + '/scss/kodekit-ui.scss',
                     kodekitPath + '/scss/core/_core.scss',
                     kodekitPath + '/scss/atoms/*.scss',
                     kodekitPath + '/scss/layout/*.scss',

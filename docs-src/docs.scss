@@ -5,6 +5,15 @@ body.sg {
   -webkit-overflow-scrolling: touch;
 }
 
+
+// Bigger size for sg-wrapper
+.sg.sg-header .sg-inner,
+.sg.sg-wrapper,
+.sg.sg-top-nav-menu {
+  max-width: 1200px;
+}
+
+
 // Hide the "View CSS" area
 [ng-if="section.css"] {
   display: none;

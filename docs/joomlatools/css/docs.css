@@ -7,6 +7,11 @@
 body.sg {
   -webkit-overflow-scrolling: touch; }
 
+.sg.sg-header .sg-inner,
+.sg.sg-wrapper,
+.sg.sg-top-nav-menu {
+  max-width: 1200px; }
+
 [ng-if="section.css"] {
   display: none; }
 
