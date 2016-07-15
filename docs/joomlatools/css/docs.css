@@ -21,6 +21,11 @@ body.sg {
 .sg.sg-label {
   z-index: 99; }
 
+.sg-section-description > ul {
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0; }
+
 @media (min-width: 300px) and (min-height: 391px) {
   .k-flexbox body.sg > .view-index.ng-scope > ui-view > shadow-dom div[ng-bind-html],
   .k-flexboxlegacy body.sg > .view-index.ng-scope > ui-view > shadow-dom div[ng-bind-html] {

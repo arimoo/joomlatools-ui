@@ -31,6 +31,14 @@ body.sg {
   z-index: 99;
 }
 
+
+// Ul
+.sg-section-description > ul {
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 // FLexbox all the things
 // Make sure we have a flexbox in the styleguide fullscreen view
 body.sg {
