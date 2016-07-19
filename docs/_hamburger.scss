@@ -6,19 +6,19 @@
  * 3. Hide when the sidebar is visible
  */
 
-.off-canvas-menu-toggle {
+.k-off-canvas-menu-toggle {
   position: relative;
   z-index: 10;
   float: left;
   display: none; /* 1 */
-  width: $button-size;
-  height: $button-size;
+  width: $hamburger-button-size;
+  height: $hamburger-button-size;
   padding: 0;
   border: none;
-  border-radius: $button-radius;
+  border-radius: $hamburger-button-radius;
   margin: 10px;
-  background: $button-background;
-  color: $button-color;
+  background: $hamburger-button-background;
+  color: $hamburger-button-color;
 
   @include rtl {
     left: auto;
@@ -38,39 +38,39 @@
    * Styling the hamburger bars
    */
 
-  .bar1,
-  .bar2,
-  .bar3 {
+  .k-hamburger-bar1,
+  .k-hamburger-bar2,
+  .k-hamburger-bar3 {
     position: absolute;
-    left: round(($button-size - $bar-width) / 2);
+    left: round(($hamburger-button-size - $hamburger-bar-width) / 2);
     display: block;
-    width: $bar-width;
-    height: $bar-height;
+    width: $hamburger-bar-width;
+    height: $hamburger-bar-height;
     border-radius: 1px;
-    background: $button-color;
+    background: $hamburger-button-color;
     vertical-align: middle;
     @include transition;
   }
 
   @include rtl {
-    .bar1,
-    .bar2,
-    .bar3 {
+    .k-hamburger-bar1,
+    .k-hamburger-bar2,
+    .k-hamburger-bar3 {
       left: auto;
-      right: round(($button-size - $bar-width) / 2);
+      right: round(($hamburger-button-size - $hamburger-bar-width) / 2);
     }
   }
 
-  .bar1 {
-    top: round(($button-size - $bar-width) / 2);
+  .k-hamburger-bar1 {
+    top: round(($hamburger-button-size - $hamburger-bar-width) / 2);
   }
 
-  .bar2 {
-    top: round((($button-size - $bar-width) / 2) + ($bar-height * 2));
+  .k-hamburger-bar2 {
+    top: round((($hamburger-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 2));
   }
 
-  .bar3 {
-    top: round((($button-size - $bar-width) / 2) + ($bar-height * 4));
+  .k-hamburger-bar3 {
+    top: round((($hamburger-button-size - $hamburger-bar-width) / 2) + ($hamburger-bar-height * 4));
   }
 }
 
@@ -102,14 +102,14 @@
  * Transform hamburger into a cross when the sidebar is opened
  */
 
-.show-left-menu {
-  .off-canvas-menu-toggle-holder--left {
-    .bar1 {
-      top: round(($button-size / 2) - ($bar-height / 2));
+.k-show-left-menu {
+  .k-off-canvas-menu-toggle-holder--left {
+    .k-hamburger-bar1 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(135deg);
     }
 
-    .bar2 {
+    .k-hamburger-bar2 {
       opacity: 0;
       transform: translate(-100%, 0);
 
@@ -118,21 +118,21 @@
       }
     }
 
-    .bar3 {
-      top: round(($button-size / 2) - ($bar-height / 2));
+    .k-hamburger-bar3 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(-135deg);
     }
   }
 }
 
-.show-right-menu {
-  .off-canvas-menu-toggle-holder--right {
-    .bar1 {
-      top: round(($button-size / 2) - ($bar-height / 2));
+.k-show-right-menu {
+  .k-off-canvas-menu-toggle-holder--right {
+    .k-hamburger-bar1 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(135deg);
     }
 
-    .bar2 {
+    .k-hamburger-bar2 {
       opacity: 0;
       transform: translate(-100%, 0);
 
@@ -141,10 +141,9 @@
       }
     }
 
-    .bar3 {
-      top: round(($button-size / 2) - ($bar-height / 2));
+    .k-hamburger-bar3 {
+      top: round(($hamburger-button-size / 2) - ($hamburger-bar-height / 2));
       transform: rotate(-135deg);
     }
   }
 }
-

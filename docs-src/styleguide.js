@@ -21,7 +21,7 @@
 
             imagePlaceholders.attr('src', 'joomlatools/images/placeholder-16-9.png');
             previewElement.html('<span>{preview element}</span>');
-            unsureText.html('If you are unsure how to use this just copy paste complete templates from the <a href="/#/section/4">templates page</a>');
+            unsureText.html('If you are unsure how to use this just copy paste complete templates from the <a href="/#/section/4">list examples</a> or the <a href="/#/section/5">form examples</a> page</a>');
         });
 
     });

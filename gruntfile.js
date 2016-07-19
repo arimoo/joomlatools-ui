@@ -100,7 +100,7 @@ module.exports = function(grunt) {
                     kodekitPath + '/scss/molecules/*.scss',
                     kodekitPath + '/scss/organisms/*.scss',
                     kodekitPath + '/scss/templates/*.scss',
-                    kodekitPath + '/scss/_shame.scss'
+                    kodekitPath + '/scss/utilities/*.scss'
                 ])
                     .pipe(styleguide.generate({
                         title: 'joomlatools UI Docs',
