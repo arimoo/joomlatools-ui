@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/joomlatools-ui.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
                     '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
                     '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
                     '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss',
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
                     kodekitPath + '/scss/utilities/*.scss'
                 ])
                     .pipe(styleguide.generate({
-                        title: 'joomlatools UI Docs',
+                        title: 'Joomlatools UI Docs',
                         rootPath: styleguideAppRoot, // This is where resources are loaded from
                         appRoot: './', // This is where the styleguide is rendered
                         overviewPath: './src/README.md',
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
                         readOnly: true,
                         server: true,
                         extraHead: [
-                            '<link href="joomlatools/css/joomlatools-ui.css" rel="stylesheet" type="text/css">',
+                            '<link href="joomlatools/css/admin.css" rel="stylesheet" type="text/css">',
                             '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
                             '<script src="joomlatools/js/min/modernizr.js"></script>',
                             '<script src="joomlatools/js/min/jquery.js"></script>',
@@ -158,7 +158,7 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['<%= distPath %>/css/joomlatools-ui.css'],
+                        src: ['<%= distPath %>/css/admin.css'],
                         dest: '<%= docsPath %>/joomlatools/css',
                         flatten: true
                     },
