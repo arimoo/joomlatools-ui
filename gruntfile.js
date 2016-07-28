@@ -116,8 +116,8 @@ module.exports = function(grunt) {
                         extraHead: [
                             '<link href="joomlatools/css/admin.css" rel="stylesheet" type="text/css">',
                             '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
-                            '<script src="joomlatools/js/min/modernizr.js"></script>',
-                            '<script src="joomlatools/js/min/jquery.js"></script>',
+                            '<script src="joomlatools/js/build/modernizr.js"></script>',
+                            '<script src="joomlatools/js/build/jquery.js"></script>',
                             '<script src="joomlatools/js/loadjs.js"></script>',
                             '<script src="joomlatools/js/styleguide.js"></script>'
                         ],
@@ -164,8 +164,8 @@ module.exports = function(grunt) {
                     },
                     {
                         expand: true,
-                        src: ['<%= distPath %>/js/min/*.*'],
-                        dest: '<%= docsPath %>/joomlatools/js/min',
+                        src: ['<%= distPath %>/js/build/*.*'],
+                        dest: '<%= docsPath %>/joomlatools/js/build',
                         flatten: true
                     },
                     {
@@ -229,7 +229,7 @@ module.exports = function(grunt) {
             uglify: {
                 files: [
                     // Kodekit UI
-                    '../kodekit-ui/dist/js/min/*.js'
+                    '../kodekit-ui/dist/js/build/*.js'
                 ],
                 tasks: ['copy'],
                 options: {
