@@ -113,6 +113,22 @@ module.exports = function(grunt) {
                         styleVariables: false,
                         readOnly: true,
                         server: true,
+                        /*styleguideProcessors: {
+                            30: function(styleguide) {
+                                console.log('foo');
+                                styleguide.sections.forEach(function(section) {
+                                    if (typeof section.markup !== 'string') return;
+                                    section.markup = '' +
+                                        '<link href="http://localhost:3000/joomlatools/css/admin.css" rel="stylesheet" type="text/css">' +
+                                        '<link href="http://localhost:3000/joomlatools/css/docs.css" rel="stylesheet" type="text/css">' +
+                                        '<script type="text/javascript" src="http://localhost:3000/joomlatools/js/build/jquery.js"></script>' +
+                                        '<script type="text/javascript" src="http://localhost:3000/joomlatools/js/build/admin.js"></script>' +
+                                        section.markup;
+
+                                    section.renderMarkup = `<iframe srcdoc='${section.markup}'></iframe>`;
+                                });
+                            }
+                        },*/
                         extraHead: [
                             '<link href="joomlatools/css/admin.css" rel="stylesheet" type="text/css">',
                             '<link href="joomlatools/css/docs.css" rel="stylesheet" type="text/css">',
