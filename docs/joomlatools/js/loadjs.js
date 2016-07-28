@@ -1,14 +1,21 @@
-function loadjs() {
-    setTimeout(function() {
-        var head = document.getElementsByTagName('head')[0];
-        var script = document.createElement('script');
-        script.type= 'text/javascript';
-        script.src= 'joomlatools/js/build/admin.js';
-        head.appendChild(script);
-    }, 500);
-}
+
 
 (function($) {
+
+    function loadjs() {
+        setTimeout(function() {
+
+            var headscript = $('script[src*="admin.js"]');
+
+            if (!headscript.length) {
+                var head = document.getElementsByTagName('head')[0];
+                var script = document.createElement('script');
+                script.type= 'text/javascript';
+                script.src= 'joomlatools/js/build/admin.js';
+                head.appendChild(script);
+            }
+        }, 500);
+    }
 
     $(document).ready(function () {
 
@@ -21,14 +28,7 @@ function loadjs() {
             // We do this to ensure dynamically created elements (e.g. the whole page since it's made with angular) will be recognized
             $(window).bind("styleguide:onRendered", function(e) {
                 var headscript = $('script[src*="admin.js"]');
-
-                if ( headscript.length ) {
-                    headscript.empty();
-                    loadjs();
-                } else {
-                    loadjs();
-                }
-
+                loadjs();
             });
         }
 
