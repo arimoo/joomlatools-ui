@@ -7,6 +7,17 @@ All markup should be copy-pasted from this styleguide.</p>
 <h2 class="sg" name="the-idea-behind-the-ui">The idea behind the UI</h2>
 <p class="sg">This is not a framework like Bootstrap is. You can&apos;t just copy paste anything anywhere. Most elements have a predefined spot.
 There are of course exceptions. If you are unsure how to use this just copy paste complete templates from the <a href="/#/section/4" class="sg">list examples</a> or the <a href="/#/section/5" class="sg">form examples</a> page.</p>
+<h3 class="sg" name="why-not-just-use-bootstrap-or-foundation?">Why not just use Bootstrap or Foundation?</h3>
+<p class="sg">The reason we created a new framework is because:</p>
+<ul>
+<li class="sg">We wanted to add flexbox to get an &quot;app&quot; feeling</li>
+<li class="sg">We needed a non-flexible grid layout where everything has it&apos;s own spot. This might sound counter-productive but read on to understand why we chose this approach</li>
+<li class="sg">We wanted a system to rely on, using BEM and Atomic design</li>
+<li class="sg">We didn&apos;t want to pollute the markup with classes like span12 which don&apos;t say anything</li>
+</ul>
+<h4 class="sg" name="but-i-still-see-bootstrap-makrup-and-classes-in-here!">But I still see Bootstrap makrup and classes in here!</h4>
+<p class="sg">That&apos;s right. We are using a couple of Bootstrap 3 modules.
+We are doing this because they are good modules that don&apos;t need to be re-discovered.</p>
 <h2 class="sg" name="how-the-ui-is-built-up">How the UI is built-up</h2>
 <p class="sg">The UI consists of a few different elements.</p>
 <ul>
@@ -75,6 +86,17 @@ If you add mandatory fields to this container they could be overseen by users on
 <li class="sg">Make sure that all parents of the <code>.koowa-container</code> have the <code>.k-flex-wrapper</code> class.</li>
 <li class="sg">Inside the <code>.koowa-container</code> you can start building your pages.</li>
 </ol>
+<h2 class="sg" name="tools-and-techniques">Tools and techniques</h2>
+<p class="sg">We are using the following tools, techniques and philosophies to build the UI:</p>
+<ul>
+<li class="sg"><a href="http://sass-lang.com/" class="sg">SASS</a></li>
+<li class="sg"><a href="http://getbem.com/naming/" class="sg">BEM naming convention</a></li>
+<li class="sg"><a href="http://bradfrost.com/blog/post/atomic-web-design/" class="sg">Atomic design</a></li>
+<li class="sg"><a href="https://modernizr.com/" class="sg">Modernizr</a></li>
+<li class="sg"><a href="https://necolas.github.io/normalize.css/" class="sg">Normalize</a></li>
+<li class="sg">Mobile first design and coding philosophy</li>
+<li class="sg"><a href="http://getbootstrap.com/" class="sg">Bootstrap 3</a></li>
+</ul>
 <h2 class="sg" name="faq">FAQ</h2>
 <h3 class="sg" name="the-styling-i&apos;m-using-inside-modals-is-not-looking-like-i-expect-it-to">The styling I&apos;m using inside modals is not looking like I expect it to</h3>
 <p class="sg">Always make sure you have at least one <code>&lt;div&gt;</code> with a <code>koowa</code> class surrounding the elemnts you want to styling using the UI.</p>

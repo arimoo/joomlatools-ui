@@ -34,6 +34,20 @@ $ rake deploy
 This is not a framework like Bootstrap is. You can't just copy paste anything anywhere. Most elements have a predefined spot. 
 There are of course exceptions. If you are unsure how to use this just copy paste complete templates from the [list examples](http://ui.joomlatools.com/#/section/4) or the [form examples](http://ui.joomlatools.com/#/section/5) page.
 
+### Why not just use Bootstrap or Foundation?
+
+The reason we created a new framework is because:
+
+- We wanted to add flexbox to get an "app" feeling
+- We needed a non-flexible grid layout where everything has it's own spot. This might sound counter-productive but read on to understand why we chose this approach
+- We wanted a system to rely on, using BEM and Atomic design
+- We didn't want to pollute the markup with classes like span12 which don't say anything
+ 
+#### But I still see Bootstrap makrup and classes in here!
+
+That's right. We are using a couple of Bootstrap 3 modules.
+We are doing this because they are good modules that don't need to be re-discovered.
+
 ### How the UI is built-up
 
 The UI consists of a few different elements.
@@ -123,6 +137,18 @@ Since the UI is built using CSS flexbox the used containers and their order is v
 3. Add `<div class="koowa-container koowa"></div>` inside the `<body>` element.
 4. Make sure that all parents of the `.koowa-container` have the `.k-flex-wrapper` class.
 5. Inside the `.koowa-container` you can start building your pages.
+
+## Tools and techniques
+
+We are using the following tools, techniques and philosophies to build the UI:
+
+- [SASS](http://sass-lang.com/)
+- [BEM naming convention](http://getbem.com/naming/)
+- [Atomic design](http://bradfrost.com/blog/post/atomic-web-design/)
+- [Modernizr](https://modernizr.com/)
+- [Normalize](https://necolas.github.io/normalize.css/)
+- Mobile first design and coding philosophy
+- [Bootstrap 3](http://getbootstrap.com/)
 
 ### FAQ
 
