@@ -11347,7 +11347,7 @@ module.exports = '1.3.3';
 
                 item = $(this);
 
-                item.addClass('k-js-dropdown-content k-dropdown__body__content');
+                item.addClass('k-js-dropdown-content k-scopebar-dropdown__body__content');
 
                 template.find('.k-js-dropdown-body').prepend(item);
                 template.find('.k-js-dropdown-title').html(item.data('title'));
@@ -11791,7 +11791,7 @@ Koowa.Grid = Koowa.Class.extend({
         this.setTableRows();
     },
     setScopebar: function() {
-        $('.js-filter-container', this.form).scopebar();
+        $('.k-js-filter-container', this.form).scopebar();
     },
     setTableHeaders: function() {
         //Make the table headers "clickable" and make checkall work

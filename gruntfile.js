@@ -109,7 +109,7 @@ module.exports = function(grunt) {
                         overviewPath: './src/README.md',
                         disableEncapsulation: true,
                         disableHtml5Mode: true,
-                        commonClass: 'koowa',
+                        commonClass: 'koowa-container koowa',
                         styleVariables: false,
                         readOnly: true,
                         server: true,

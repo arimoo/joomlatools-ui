@@ -20,7 +20,7 @@ The reason we created a new framework is because:
 - We want an "App" feeling by leveraging [CSS's Flexible Box Layout](https://www.w3.org/TR/css-flexbox-1/)
 - We need a non-flexible grid layout where everything has it's own spot. This might sound counter-productive but read on to understand why we chose this approach
 - We want to leverage modern methodologies like [BEM](https://en.bem.info/methodology/) and [Atomic Design](http://atomicdesign.bradfrost.com/)
-- We didn't want to pollute the markup with classes like ```span12``` which don't say anything
+- We didn't want to pollute the markup with classes like `span12` which don't say anything
 
 #### But I still see Bootstrap markup and classes?
 

@@ -43,7 +43,7 @@ The reason we created a new framework is because:
 - We wanted a system to rely on, using BEM and Atomic design
 - We didn't want to pollute the markup with classes like span12 which don't say anything
  
-#### But I still see Bootstrap makrup and classes in here!
+#### But I see Bootstrap markup and classes in here!
 
 That's right. We are using a couple of Bootstrap 3 modules.
 We are doing this because they are good modules that don't need to be re-discovered.
