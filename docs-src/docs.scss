@@ -71,13 +71,15 @@ body.sg {
 
 
 // Better code styling for in descriptions
+ol code,
+ul code,
+p.sg code,
 .sg-section-description code {
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
   border-radius: 3px;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
-  font-size: .72rem;
-  line-height: .72rem;
+  font-size: smaller;
   white-space: normal;
   color: #c25;
   padding: 1px 3px;
@@ -85,9 +87,23 @@ body.sg {
   font-variant-ligatures: none;
 }
 
-.sg-alert {
+.sg-alert.sg-alert {
   background: #c0392b;
   padding: 5px 8px;
   border-radius: 5px;
   color: white;
 }
+
+p.sg {
+  max-width: 900px;
+}
+
+img {
+  max-width: 100%;
+
+  &:only-child {
+    vertical-align: middle;
+  }
+}
+
+

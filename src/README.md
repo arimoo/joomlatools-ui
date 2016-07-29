@@ -1,61 +1,127 @@
 # Joomlatools UI
 
-An intuitive User Interface.
+<p class="sg-alert">This software is not released yet. Things might change!</p>
 
-## Why
+Joomlatools UI is an intuitive User Interface that can be used on top of the Joomla administrator.
+It is not a Joomla template and therefore does not work with the joomla markup out-of-the-box.
+All markup should be copy-pasted from this styleguide.
 
-We wanted to create an intuitive User Interface that could be used on top of Joomla.
+![DOCman using Joomlatools UI](/joomlatools/images/docman.png)
 
-### The idea behind the UI
+## The idea behind the UI
 
 This is not a framework like Bootstrap is. You can't just copy paste anything anywhere. Most elements have a predefined spot. 
-There are of course exceptions. You can take a look at the "templates" page for examples to copy paste.
+There are of course exceptions. If you are unsure how to use this just copy paste complete templates from the [list examples](/#/section/4) or the [form examples](/#/section/5) page.
 
-### How the UI is built-up
+### Why not just use Bootstrap or Foundation?
 
-[Make illustrations about the order of elements]
+The reason we created a new framework is because 
+- Size,
+- Flexbox
+- We are using BS bits
+- 
 
-[Explain flexbox]
+## How the UI is built-up
 
-[Link to comeplete list and complete form page]
+The UI consists of a few different elements.
 
-The UI basically consists out of the following two views:
-- A list view that lists items
-- A form view that displays a form to add or edit items
+- Menubar / Titlebar
+- Sidebar
+- Content area
+  - List
+  - Form
+  
+The menubar and sidebar are both optional.
+The content area should always be there and can consist out of either a list of items or a an item form.
+All modals are using the same views to keep the interface recognizable.
 
-Modals are using the same views to keep thing recognizable
+### The menubar / titlebar [optional]
 
-#### The list view
+The menubar holds the main navigation of the application.
+It can contain the application logo, login / logout links and links to the main pages of the application.
 
-The list view consists out of a list of items and can be accompanied by the following elements
+For modals or other pages that do not have a menubar you could use a titlebar to display what the view is about.
 
-- A menubar
-- A titlebar
-- A left sidebar
-- A right sidebar
-- A toolbar
+### The sidebar [optional]
+
+The sidebar holds sub-navigation for the content area.
+This navigation could be links (using the [navigation](/#/section/2.16) molecule), A category or folder tree (using the [tree](/#/section/2.26) molecule), or quick links to pre-defined filters (using the [list](/#/section/2.13) molecule)
+All of these elements are navigational elements to display something in teh content area.
+
+### The list view
+
+The list view can consist out of the following elements
+
+- Toolbar
 - Breadcrumbs
-- A scopebar
+- Scopebar
+- Table / Grid
 
-In the left sidebar you can find elements like sub-navigation, a tree and quickfilters. These elements are all navigational elements to display something on the right (in the list).
+#### Toolbar
 
-The toolbar should always be placed on top of the list and never on top of the sidebar since the actions in the toolbar are about the list below it, and about not the elements in the left sidebar. The reason that the toolbar is on top is because the actions you take (for example creating a new item) could ignore the filters that are active on the list below it. For example you could have a filtered list that only shows items with a certain category. When creating a new item you could choose to add another category. 
+The toolbar should always be placed on top of the list and next to the sidebar.
+Never place the toolbar on top of the sidebar since the actions in the toolbar are only applying to the list below it, and not to the elements in the left sidebar.
+The reason that the toolbar is the first element of the list view is because the actions you take (for example creating a new item) could ignore the filters that are active on the list below it.
+For example you could have a filtered list that only shows items with a certain category. When creating a new item you could choose to add another category ignoring the category filter.
 
-After the toolbar a breadcrumbs may follow to display which folder or category we are currently viewing. Inside this category we can filter so the scopebar is to follow next.
+#### Breadcrumbs [optional]
 
-The scopebar is the last row of filters to get a small list of items you are looking for. As a best practice the search can be found on the top right.
+After the toolbar the breadcrumbs may follow to display which folder or category we are currently viewing narrowing the results down.
 
-What you end up with is a list that only show the items that meet the set filters like:
-- UI page 
-- Page category / folder
-- Page filters (user, date etc.)
+#### Scopebar [optional]
 
-Last but not least we've got the limit and pagination on the bottom showing you there is more than the items you just saw.
+The final layer is the scopebar where you can filter items or search within the displayed results
 
-#### The form view
+#### Table / Grid
 
-It is important to know that you should always only use a sidebar in a form view when there's autosaving enabled on the form. Otherwise people could lose their work.
+This is where the list of (filtered) items are shown. Ending with the limit and pagination elements on the bottom showing there is more than the items displayed above.
 
-For the form you should also never place the toolbar above the sidebar.
+### The form view
 
-In the form view you can use a titlebar to display which page you are on. This is especially helpful on mobile views.
+Important: It is important to know that you should always only use a sidebar in a form view when there's autosaving enabled on the form. Otherwise people could lose their work.
+
+The form view can be split up in two columns by using a container element. There are three widths available
+
+- Full
+- Main
+- Sub
+
+#### Full
+
+The full container spans the entire width of it's parent.
+
+#### Main
+
+The main container spans 2/3 of it's parent.
+All mandatory fields should be in this container.
+
+#### Sub
+
+The sub container spans 1/3 of it's parent.
+No mandatory fields should be in this container since the container will be below the main container on mobiel views.
+If you add mandatory fields to this container they could be overseen by users on smaller screens which will cause a lot of irritation.
+
+## How to start?
+
+Since the UI is built using CSS flexbox the used containers and their order is very important. Again, if you're not sure just copy-paste entire pages from the [list examples](/#/section/4) or the [form examples](/#/section/5) page.
+
+1. Load `modernizr.js`, `jquery.js`, `admin.js` and `admin.css` in the `<head>` element
+2. Copy the `fonts/k-icons` folder including files to the same parent as the `css` parent folder. (e.g. `/media/css/` and `/media/fonts/k-icons/`)
+3. Add `<div class="koowa-container koowa"></div>` inside the `<body>` element.
+4. Make sure that all parents of the `.koowa-container` have the `.k-flex-wrapper` class.
+5. Inside the `.koowa-container` you can start building your pages.
+
+## Tools and techniques
+
+- BEM
+- SASS
+- Atomic
+- Modernizr
+- Normalize
+- Mobile first
+
+## FAQ
+
+### The styling I'm using inside modals is not looking like I expect it to
+
+Always make sure you have at least one `<div>` with a `koowa` class surrounding the elemnts you want to styling using the UI.
