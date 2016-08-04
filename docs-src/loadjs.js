@@ -35,7 +35,9 @@
     });
 
     $(window).on('hashchange', function() {
-        window.location.reload();
+        if (window.location.href.indexOf("localhost") < 1) {
+            window.location.reload();
+        }
     });
 
 })(kQuery);
