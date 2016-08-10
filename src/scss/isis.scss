@@ -267,16 +267,6 @@ body {
   }
 
 
-
-  /**
-   * Reduce bottom padding on debug container
-   */
-
-  #system-debug {
-    padding-bottom: 10px;
-  }
-
-
   /**
    * Remove margin from bootstrap grid item
    */
@@ -317,6 +307,26 @@ body {
       .koowa-container {
         padding-bottom: 0;
       }
+    }
+  }
+
+
+  /**
+   * Special debug styling
+   */
+
+  div#system-debug {
+    margin: 0;
+    padding: 0;
+    border: none;
+    max-height: 36px;
+    overflow: hidden;
+    transition: all .2s ease;
+
+    &:hover,
+    &:focus {
+      max-height: 999px;
+      overflow: auto;
     }
   }
 }
