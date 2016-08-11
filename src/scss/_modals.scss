@@ -14,7 +14,7 @@
   bottom: 5% !important;
   padding: 1px!important;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     left: auto !important;
     right: 5% !important;
   }
@@ -35,7 +35,7 @@
   width: 100%;
   height: 100%;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     direction: rtl;
   }
 

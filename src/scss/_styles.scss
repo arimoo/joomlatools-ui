@@ -21,7 +21,7 @@ select {
 .pull-left {
   float: left;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     float: right;
   }
 }
@@ -29,7 +29,7 @@ select {
 .pull-right {
   float: right;
 
-  @include rtl-outside-koowa {
+  @include rtl {
     float: left;
   }
 }
