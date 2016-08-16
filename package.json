@@ -13,18 +13,18 @@
   },
   "homepage": "https://github.com/joomlatools/joomlatools-ui#readme",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.2.0",
-    "grunt-browser-sync": "^2.2.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-gulp": "^1.0.0",
-    "grunt-sass": "^1.1.0",
-    "grunt-shell": "^1.1.2",
-    "gulp": "^3.9.1",
-    "jit-grunt": "^0.9.1",
-    "sc5-styleguide": "^1.0.0",
-    "time-grunt": "^1.2.1"
+    "grunt": "1.0.0",
+    "grunt-autoprefixer": "2.2.0",
+    "grunt-browser-sync": "2.2.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-gulp": "1.0.1",
+    "grunt-sass": "1.2.1",
+    "grunt-shell": "1.3.1",
+    "gulp": "3.9.1",
+    "jit-grunt": "0.10.0",
+    "sc5-styleguide": "1.0.0",
+    "time-grunt": "1.4.0"
   }
 }
