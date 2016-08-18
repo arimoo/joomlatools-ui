@@ -38,3 +38,11 @@ select {
   @extend .k-button;
   @extend .k-button--default;
 }
+
+.clearfix {
+  @include clearfix;
+}
+
+.editor {
+  @include clearfix;
+}
