@@ -1,0 +1,73 @@
+/**
+ * Style the new Joomla modals
+ * ===========================
+ * By default we only get a very small modal window
+ * Overriding styles make sure we get the most space out of it (at least on our views)
+ */
+
+.mce-window.mce-in {
+  opacity: 1;
+  width: 90%!important;
+  height: auto !important;
+  left: 5%!important;
+  top: 50px !important;
+  bottom: 5% !important;
+  padding: 1px!important;
+
+  @include rtl {
+    left: auto !important;
+    right: 5% !important;
+  }
+}
+
+#mce-modal-block.mce-in.mce-in {
+  opacity: .8;
+}
+
+.mce-reset,
+.mce-window-body.mce-window-body {
+  width: 100%!important;
+  height: 100%!important;
+}
+
+.mce-reset {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  @include rtl {
+    direction: rtl;
+  }
+
+  .mce-window-head.mce-window-head {
+    display: table-row;
+    padding: 0;
+    white-space: nowrap;
+    height: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .mce-close {
+      right: 10px;
+      top: -35px;
+    }
+  }
+
+  .mce-title {
+    display: none;
+  }
+
+  .mce-window-body.mce-window-body {
+    display: table-row;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .mce-foot.mce-foot {
+    display: none;
+  }
+}
+
+.mce-dragh {
+  display: none!important;
+}
