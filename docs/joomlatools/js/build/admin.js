@@ -17824,7 +17824,9 @@ $(function() {
                 // Toggle button:
                 menuToggle.click(function(event){
                     event.stopPropagation();
-                    toggleMenu(menu);
+                    if ( menuToggle.is(':visible') ) {
+                        toggleMenu(menu);
+                    }
                 });
 
                 // Close menu by clicking anywhere
@@ -18149,9 +18151,9 @@ var Konami = function (callback) {
         if ($('.k-js-title-bar, .k-js-toolbar').length && $('.k-js-wrapper').length && $('.k-js-content').length)
         {
             var toggle_button = '<div class="k-off-canvas-menu-toggle-holder"><button class="k-off-canvas-menu-toggle" type="button">' +
-                    '<span class="k-hamburger-bar1"></span>' +
-                    '<span class="k-hamburger-bar2"></span>' +
-                    '<span class="k-hamburger-bar3"></span>' +
+                    '<span class="k-toggle-button-bar1"></span>' +
+                    '<span class="k-toggle-button-bar2"></span>' +
+                    '<span class="k-toggle-button-bar3"></span>' +
                     '</button></div>',
                 sidebar_left  = $('.k-js-sidebar-left'),
                 sidebar_right = $('.k-js-sidebar-right');
@@ -18206,16 +18208,28 @@ var Konami = function (callback) {
             }
 
             if (sidebar_left.length) {
+                // Add button for left sidebar
                 $.each(sidebar_left, function() {
                     addOffCanvasButton($(this), 'left');
                 });
             }
 
             if (sidebar_right.length) {
+                // Add button for right sidebar
                 $.each(sidebar_right, function() {
                     addOffCanvasButton($(this), 'right');
                 });
+
+                // Open right sidebar on selecting items in table
+                // Only apply to actual `<a>` elements
+                $('.k-table-container table').on('click', 'a', function() {
+                    // Only apply if parent is a `<td>` (so not a `<th>`)
+                    if ($(this).parents('td').length > 0) {
+                        $('.k-off-canvas-menu-toggle--right').trigger('click');
+                    }
+                });
             }
+
         }
 
         // Overflowing items
@@ -18270,7 +18284,9 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-filters k-js-toggle-filters">' +
                         '<span class="k-icon-filter" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Filters toggle</span>' +
+                        // @TODO: Ercan: START This should only be visible when there's an active filter
                         '<div class="js-filter-count k-scopebar__item-label"></div>' +
+                        // @TODO: Ercan: END
                         '</button>');
                 }
 
@@ -18278,6 +18294,9 @@ var Konami = function (callback) {
                     toggleButtons.prepend('<button type="button" class="k-scopebar__button k-toggle-scopebar-search k-js-toggle-search">' +
                         '<span class="k-icon-magnifying-glass" aria-hidden="true">' +
                         '<span class="k-visually-hidden">Search toggle</span>' +
+                        // @TODO: Ercan: START This should only be visible when search is being used by the user
+                        '<div class="js-search-count k-scopebar__item-label"></div>' +
+                        // @TODO: Ercan: END
                         '</button>');
                 }
             });

@@ -7,17 +7,16 @@
 
 .mce-window.mce-in {
   opacity: 1;
-  width: 90%!important;
-  height: auto !important;
-  left: 5%!important;
-  top: 50px !important;
-  bottom: 5% !important;
-  padding: 1px!important;
-
-  @include rtl {
-    left: auto !important;
-    right: 5% !important;
-  }
+  width: 1080px !important;
+  max-width: 90% !important;
+  height: 800px !important;
+  max-height: 90% !important;
+  left: 50%!important;
+  top: 50% !important;
+  bottom: auto !important;
+  padding: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
 }
 
 #mce-modal-block.mce-in.mce-in {
@@ -54,7 +53,12 @@
   }
 
   .mce-title {
-    display: none;
+    padding: 13px !important;
+    font-weight: $regular !important;
+    background: #f0f0f0 !important;
+    color: #222222 !important;
+    font-size: 21px !important;
+    border-bottom: 1px solid #d2d2d2 !important;
   }
 
   .mce-window-body.mce-window-body {
@@ -70,4 +74,9 @@
 
 .mce-dragh {
   display: none!important;
+}
+
+.mce-reset .mce-window-head.mce-window-head .mce-close {
+  top: -39px !important;
+  right: -1px !important;
 }
