@@ -257,6 +257,10 @@ body {
         border-bottom: 1px solid $toolbar-border;
         padding: 10px 35px 10px 10px;
 
+        @include rtl {
+          padding: 10px 10px 10px 35px;
+        }
+
         h4, p, div {
           &:last-child {
             margin-bottom: 0;
