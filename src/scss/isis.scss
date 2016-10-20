@@ -19,7 +19,7 @@
  * !!!!!!!!!!
  */
 
-@import "../../../kodekit-ui/src/scss/core/tools";
+@import "../../../kodekit-ui/src/scss/admin/core/tools";
 
 body {
   box-sizing: border-box; // 1
@@ -57,7 +57,7 @@ body {
   }
 
   .container-main {
-    @include breakpoint($charlie) {
+    @include breakpoint($k-charlie) {
       margin-bottom: 30px; // 5
     }
   }
@@ -80,7 +80,7 @@ body {
    */
 
   .k-overview {
-    margin-top: $spacing;
+    margin-top: $k-spacing;
   }
 
 
@@ -116,7 +116,7 @@ body {
     padding: 0;
 
     // We can't use @include flexbox since we are inside the body scope (which holds k-js-enabled)
-    @if $flexbox == true {
+    @if $k-flexbox == true {
       @at-root {
         .k-flexbox &,
         .k-flexboxlegacy & {
@@ -254,7 +254,7 @@ body {
       .alert {
         margin: 0;
         border-radius: 0;
-        border-bottom: 1px solid $toolbar-border;
+        border-bottom: 1px solid $k-toolbar-border;
         padding: 10px 35px 10px 10px;
 
         @include rtl {
@@ -334,3 +334,4 @@ body {
     }
   }
 }
+
