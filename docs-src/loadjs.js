@@ -33,12 +33,12 @@
         }
 
     });
-
-    $(window).on('hashchange', function() {
-        if (window.location.href.indexOf("localhost") < 1) {
-            window.location.reload();
-        }
-    });
+    //
+    //$(window).on('hashchange', function() {
+    //    if (window.location.href.indexOf("localhost") < 1) {
+    //        window.location.reload();
+    //    }
+    //});
 
 })(kQuery);
 
