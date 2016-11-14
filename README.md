@@ -2,7 +2,7 @@
 
 **This software is not released yet. Things might change!**
 
-[Joomlatools UI](https://www.joomlatools.com/developer/ui) is an intuitive User Interface that can be used on top of the Joomla administrator.
+[Joomlatools UI](https://www.joomlatools.com/developer/ui/) is an intuitive User Interface that can be used on top of the Joomla administrator.
 It is not a Joomla template and therefore does not work with the joomla markup out-of-the-box.
 All markup should be copy-pasted from this styleguide.
 
