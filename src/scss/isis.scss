@@ -294,7 +294,7 @@ body {
    * Make room for the statusbar in Joomla
    */
 
-  .koowa-container {
+  .k-ui-container {
     @include js-enabled {
       @include breakpoint(768px) {
         padding-bottom: 29px;
@@ -308,7 +308,7 @@ body {
 
   .status-top {
     & ~ .container-main {
-      .koowa-container {
+      .k-ui-container {
         padding-bottom: 0;
       }
     }
