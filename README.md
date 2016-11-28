@@ -8,7 +8,7 @@ All the administrator interfaces of our [extensions](https://www.joomlatools.com
 
 Our goal is to make it easier for developers to create user-centered custom extensions.
 
-![DOCman using Joomlatools UI](docs/joomlatools/images/docman.png)
+![DOCman using Joomlatools UI](https://www.joomlatools.com/images/developer/ui/list-layout.png)
 
 ## Installation
 
