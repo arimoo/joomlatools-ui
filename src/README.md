@@ -117,9 +117,9 @@ Since the UI is built using CSS Flexbox the used containers and their order is v
 
 1. Load `modernizr.js`, `jquery.js`, `admin.js` and `admin.css` in the `<head>` element
 2. Copy the `fonts/k-icons` folder including files to the same parent as the `css` parent folder. (e.g. `/media/css/` and `/media/fonts/k-icons/`)
-3. Add `<div class="koowa-container koowa"></div>` inside the `<body>` element.
-4. Make sure that all parents of the `.koowa-container` have the `.k-flex-wrapper` class.
-5. Inside the `.koowa-container` you can start building your pages.
+3. Add `<div class="k-ui-container k-ui-namespace"></div>` inside the `<body>` element.
+4. Make sure that all parents of the `.k-ui-container` have the `.k-flex-wrapper` class.
+5. Inside the `.k-ui-container` you can start building your pages.
 
 The [list examples](/#/section/4) and [form examples](/#/section/5) can be used to quickly build pages.
 
@@ -143,4 +143,4 @@ The [list examples](/#/section/4) and [form examples](/#/section/5) can be used 
 
 ### The styling I'm using inside modals is not looking like I expect it to
 
-Always make sure you have at least one `<div>` with a `koowa` class surrounding the elements you want to style.
+Always make sure you have at least one `<div>` with a `k-ui-namespace` class surrounding the elements you want to style.
