@@ -19,7 +19,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin.scss',
+                    '<%= distPath %>/css/site.css': '<%= srcPath %>/scss/site.scss',
                     '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
                     '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
                     '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
