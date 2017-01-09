@@ -76,16 +76,6 @@ body {
 
 
   /**
-   * Adding spacing to overview
-   */
-
-  .k-overview {
-    margin-top: $k-spacing;
-  }
-
-
-
-  /**
    * Component only
    * ==============
    */
@@ -129,13 +119,6 @@ body {
     @include breakpoint(768px) {
       margin-left: 0; // 2 + 3
       margin-right: 0; // 2 + 3
-    }
-
-    // Remove top margin by default
-    #content .row-fluid .span12 {
-      .k-overview {
-        margin-top: 0;
-      }
     }
   }
 
@@ -230,17 +213,6 @@ body {
         left: auto;
         box-shadow: none;
       }
-
-
-      /**
-       * Remove the border on successful flexbox
-       */
-
-      #content .row-fluid .span12 {
-        .k-overview {
-          border: none;
-        }
-      }
     }
 
 
@@ -294,7 +266,7 @@ body {
    * Make room for the statusbar in Joomla
    */
 
-  .koowa-container {
+  .k-ui-container {
     @include js-enabled {
       @include breakpoint(768px) {
         padding-bottom: 29px;
@@ -308,7 +280,7 @@ body {
 
   .status-top {
     & ~ .container-main {
-      .koowa-container {
+      .k-ui-container {
         padding-bottom: 0;
       }
     }
