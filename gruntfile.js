@@ -110,7 +110,7 @@ module.exports = function(grunt) {
                     atBegin: true // Keep set to true since this runs the copy task, if set to false add copy task to default registerTask
                 }
             },
-            uglify: {
+            js: {
                 files: [
                     // Kodekit UI
                     '<%= KUIPath %>/dist/js/build/*.js'
@@ -129,4 +129,4 @@ module.exports = function(grunt) {
     // The dev task will be used during development
     grunt.registerTask('default', ['shell', 'watch']);
 
-}
+};
