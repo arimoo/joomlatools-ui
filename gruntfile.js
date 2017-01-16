@@ -118,7 +118,7 @@ module.exports = function(grunt) {
                 tasks: ['copy'],
                 options: {
                     interrupt: true,
-                    atBegin: false
+                    atBegin: true
                 }
             }
         }
