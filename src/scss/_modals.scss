@@ -5,9 +5,7 @@
  * Overriding styles make sure we get the most space out of it (at least on our views)
  */
 
-.mce-window[aria-label="Document"],
-.mce-window[aria-label="File"],
-.mce-window[aria-label^="Attachments"] {
+.k-joomla-modal-override {
   opacity: 1;
   width: 1080px !important;
   max-width: 90% !important;
