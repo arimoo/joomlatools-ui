@@ -14,9 +14,12 @@
   left: 50%!important;
   top: 50% !important;
   bottom: auto !important;
-  padding: 0 !important;
   transform: translate(-50%, -50%) !important;
   transition: none !important;
+
+  &.mce-in {
+    padding: 0 !important;
+  }
 
   & + #mce-modal-block.mce-in.mce-in {
     opacity: .8;
