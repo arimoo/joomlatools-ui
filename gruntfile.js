@@ -21,6 +21,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
                     '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
+                    '<%= distPath %>/css/modal-override.css': '<%= srcPath %>/scss/modal-override.scss',
                     '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
                     '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
                 }
