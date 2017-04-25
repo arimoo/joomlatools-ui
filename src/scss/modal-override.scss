@@ -13,6 +13,9 @@
 @import "../../../kodekit-ui/src/scss/admin/core/tools";
 
 
+$modal-width: 1280px;
+$modal-height: 900px;
+
 
 /**
  * Style the new Joomla modals
@@ -23,9 +26,9 @@
 
 .k-joomla-modal-override {
   opacity: 1;
-  width: 1080px !important;
+  width: $modal-width !important;
   max-width: 90% !important;
-  height: 800px !important;
+  height: $modal-height !important;
   max-height: 90% !important;
   left: 50%!important;
   top: 50% !important;
@@ -92,5 +95,9 @@
   .mce-dragh {
     display: none!important;
   }
-}
 
+  & > #sbox-content > iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
