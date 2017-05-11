@@ -25,6 +25,12 @@ module.exports = function(grunt) {
                     '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
                     '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
                 }
+            },
+            options: {
+                includePaths: [
+                    'bower_components',
+                    'node_modules'
+                ]
             }
         },
 
