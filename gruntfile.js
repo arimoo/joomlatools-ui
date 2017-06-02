@@ -118,7 +118,7 @@ module.exports = function(grunt) {
                 tasks: ['sass', 'cssmin', 'autoprefixer'],
                 options: {
                     interrupt: true,
-                    atBegin: true // Keep set to true since this runs the copy task, if set to false add copy task to default registerTask
+                    atBegin: true
                 }
             },
             js: {
