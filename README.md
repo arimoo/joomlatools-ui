@@ -1,4 +1,4 @@
-# Joomlatools UI
+# Joomlatools UI 0.1.0
 
 **This is a first public preview. Things will change!**
 

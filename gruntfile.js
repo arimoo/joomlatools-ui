@@ -19,18 +19,20 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/joomlatools-ui.scss',
-                    '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
-                    '<%= distPath %>/css/modal-override.css': '<%= srcPath %>/scss/modal-override.scss',
-                    '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
-                    '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
+                    '<%= distPath %>/css/build/admin.css': '<%= srcPath %>/scss/admin.scss',
+                    '<%= distPath %>/css/build/component.css': '<%= srcPath %>/scss/component.scss',
+                    '<%= distPath %>/css/build/modal-override.css': '<%= srcPath %>/scss/modal-override.scss',
+                    '<%= distPath %>/css/build/hathor.css': '<%= srcPath %>/scss/hathor.scss',
+                    '<%= distPath %>/css/build/isis.css': '<%= srcPath %>/scss/isis.scss'
                 }
             },
             options: {
                 includePaths: [
-                    'bower_components',
-                    'node_modules'
-                ]
+                    'node_modules',
+                    '<%= KUIPath %>/node_modules'
+                ],
+                outputStyle: 'expanded',
+                sourceMap: false
             }
         },
 
@@ -39,12 +41,14 @@ module.exports = function(grunt) {
         cssmin: {
             options: {
                 roundingPrecision: -1,
-                sourceMap: true
+                sourceMap: false
             },
             site: {
                 files: [{
                     expand: true,
-                    src: ['<%= distPath %>/css/*.css', '!*.css']
+                    flatten: true,
+                    src: ['<%= distPath %>/css/build/*.css', '!*.css'],
+                    dest: '<%= distPath %>/css/min/'
                 }]
             }
         },
@@ -58,8 +62,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: '<%= distPath %>/css/*.css',
-                dest: '<%= distPath %>/css/'
+                src: '<%= distPath %>/css/min/*.css',
+                dest: '<%= distPath %>/css/min/'
             }
         },
 
@@ -111,7 +115,7 @@ module.exports = function(grunt) {
                     '<%= srcPath %>/scss/*.scss',
                     '<%= srcPath %>/scss/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer', 'copy'],
+                tasks: ['sass', 'cssmin', 'autoprefixer'],
                 options: {
                     interrupt: true,
                     atBegin: true // Keep set to true since this runs the copy task, if set to false add copy task to default registerTask
