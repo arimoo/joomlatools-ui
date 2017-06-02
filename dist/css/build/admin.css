@@ -11963,7 +11963,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   display: none;
 }
 
-.k-ui-namespace .k-hidden.k-hidden.k-hidden {
+.k-ui-namespace .k-hidden.k-hidden.k-hidden,
+.k-ui-namespace .k-is-hidden.k-is-hidden.k-is-hidden {
   display: none;
 }
 
