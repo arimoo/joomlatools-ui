@@ -19,11 +19,11 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '<%= distPath %>/css/build/admin.css': '<%= srcPath %>/scss/admin.scss',
-                    '<%= distPath %>/css/build/component.css': '<%= srcPath %>/scss/component.scss',
-                    '<%= distPath %>/css/build/modal-override.css': '<%= srcPath %>/scss/modal-override.scss',
-                    '<%= distPath %>/css/build/hathor.css': '<%= srcPath %>/scss/hathor.scss',
-                    '<%= distPath %>/css/build/isis.css': '<%= srcPath %>/scss/isis.scss'
+                    '<%= distPath %>/css/admin.css': '<%= srcPath %>/scss/admin.scss',
+                    '<%= distPath %>/css/component.css': '<%= srcPath %>/scss/component.scss',
+                    '<%= distPath %>/css/modal-override.css': '<%= srcPath %>/scss/modal-override.scss',
+                    '<%= distPath %>/css/hathor.css': '<%= srcPath %>/scss/hathor.scss',
+                    '<%= distPath %>/css/isis.css': '<%= srcPath %>/scss/isis.scss'
                 }
             },
             options: {
@@ -37,6 +37,20 @@ module.exports = function(grunt) {
         },
 
 
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['> 5%', 'last 2 versions']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: '<%= distPath %>/css/*.css',
+                dest: '<%= distPath %>/css/'
+            }
+        },
+
+
         // Minify and clean CSS
         cssmin: {
             options: {
@@ -46,24 +60,11 @@ module.exports = function(grunt) {
             site: {
                 files: [{
                     expand: true,
-                    flatten: true,
-                    src: ['<%= distPath %>/css/build/*.css', '!*.css'],
-                    dest: '<%= distPath %>/css/min/'
+                    cwd: '<%= distPath %>/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '<%= distPath %>/css',
+                    ext: '.min.css'
                 }]
-            }
-        },
-
-
-        // Autoprefixer
-        autoprefixer: {
-            options: {
-                browsers: ['> 5%', 'last 2 versions', 'ie 11']
-            },
-            files: {
-                expand: true,
-                flatten: true,
-                src: '<%= distPath %>/css/min/*.css',
-                dest: '<%= distPath %>/css/min/'
             }
         },
 
@@ -115,7 +116,7 @@ module.exports = function(grunt) {
                     '<%= srcPath %>/scss/*.scss',
                     '<%= srcPath %>/scss/**/*.scss'
                 ],
-                tasks: ['sass', 'cssmin', 'autoprefixer'],
+                tasks: ['sass', 'autoprefixer', 'cssmin'],
                 options: {
                     interrupt: true,
                     atBegin: true

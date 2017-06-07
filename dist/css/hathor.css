@@ -26,6 +26,8 @@ body.tmpl-hathor #element-box {
 @media (min-width: 300px) and (min-height: 391px) {
   .k-flexbox body.tmpl-hathor #element-box,
   .k-flexboxlegacy body.tmpl-hathor #element-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
