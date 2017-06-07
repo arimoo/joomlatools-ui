@@ -92,8 +92,8 @@ body.k-is-resizing {
    ========================================================================== */
 @font-face {
   font-family: "k-icons";
-  src: url("../../fonts/k-icons/k-icons.eot");
-  src: url("../../fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../../fonts/k-icons/k-icons.woff") format("woff"), url("../../fonts/k-icons/k-icons.ttf") format("truetype"), url("../../fonts/k-icons/k-icons.svg#k-icons") format("svg");
+  src: url("../fonts/k-icons/k-icons.eot");
+  src: url("../fonts/k-icons/k-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/k-icons/k-icons.woff") format("woff"), url("../fonts/k-icons/k-icons.ttf") format("truetype"), url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -106,7 +106,7 @@ body.k-is-resizing {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "k-icons";
-    src: url("../../fonts/k-icons/k-icons.svg#k-icons") format("svg");
+    src: url("../fonts/k-icons/k-icons.svg#k-icons") format("svg");
   }
 }
 
@@ -10297,16 +10297,16 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 
 .k-ui-namespace .k-table-container {
   /**
-   * Sticky header
-   *
-   * 1. Set top to 0 because there's no default yet
-   * 2. Set z-index to 1 to make sure it covers the tbody
-   */
-  /**
    * Cells
    *
    * 1. Position checkbox
    * 2. Remove default margin
+   */
+  /**
+   * Sticky header
+   *
+   * 1. Set top to 0 because there's no default yet
+   * 2. Set z-index to 1 to make sure it covers the tbody
    */
   /**
    * Head
@@ -10326,6 +10326,8 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 }
 
 .k-ui-namespace .k-table-container table {
+  margin: 0;
+  padding: 0;
   width: 100%;
   text-align: left;
   border-collapse: separate;
@@ -10344,12 +10346,6 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   .k-flexboxlegacy .k-ui-namespace .k-table-container table {
     flex: 1 1 auto;
   }
-}
-
-.k-ui-namespace .k-table-container thead {
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .k-ui-namespace .k-table-container th,
@@ -10375,6 +10371,12 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
 [dir="rtl"] .k-ui-namespace .k-table-container th,
 [dir="rtl"] .k-ui-namespace .k-table-container td {
   text-align: right;
+}
+
+.k-ui-namespace .k-table-container th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .k-ui-namespace .k-table-container th {
@@ -10755,6 +10757,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   white-space: nowrap;
   background: #fbfbfb;
   border-bottom-color: #ededed;
+  top: 40px;
 }
 
 .k-ui-namespace .k-table-container {
