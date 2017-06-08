@@ -76,19 +76,13 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         src: ['<%= KUIPath %>/dist/fonts/k-icons/*.*'],
-                        dest: '<%= distPath %>/fonts/k-icons',
+                        dest: '<%= distPath %>/fonts/k-icons/',
                         flatten: true
                     },
                     {
                         expand: true,
-                        src: ['<%= KUIPath %>/dist/js/build/*.*'],
-                        dest: '<%= distPath %>/js/build',
-                        flatten: true
-                    },
-                    {
-                        expand: true,
-                        src: ['<%= KUIPath %>/dist/js/min/*.*'],
-                        dest: '<%= distPath %>/js/min',
+                        src: ['<%= KUIPath %>/dist/js/*.*'],
+                        dest: '<%= distPath %>/js/',
                         flatten: true
                     }
                 ]
