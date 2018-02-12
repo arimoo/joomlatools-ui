@@ -5,7 +5,7 @@
 
 @import "../../../kodekit-ui/src/scss/admin/core/tools";
 
-body.tmpl-hathor {
+body#minwidth-body {
   .subheader,
   .toolbar-box {
     display: none!important;
@@ -21,15 +21,13 @@ body.tmpl-hathor {
 
   #element-box {
     border: 1px solid #ccc;
-
-    @include flexbox {
-      display: flex;
-      width: 100%;
-    }
+    display: flex;
+    width: 100%;
   }
 
   .k-ui-container {
     width: 100%;
     max-width: none;
+    font-size: 13px;
   }
 }
