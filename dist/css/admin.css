@@ -1999,6 +1999,9 @@ body.k-is-resizing {
   /**
    * Selected card
    */
+  /**
+   * Flexing card
+   */
   /* CK Editor
      ========================================================================== */
   /**
@@ -3436,9 +3439,11 @@ body.k-is-resizing {
     float: right;
   }
   [dir="rtl"] .k-ui-namespace .k-container__main:first-child {
+    padding-right: 16px;
     padding-left: 8px;
   }
-  [dir="rtl"] .k-ui-namespace .k-container__main:last-child {
+  [dir="rtl"] .k-ui-namespace .k-container__main:last-child:not(:first-child) {
+    padding-left: 16px;
     padding-right: 8px;
   }
 }
@@ -3464,9 +3469,11 @@ body.k-is-resizing {
     float: right;
   }
   [dir="rtl"] .k-ui-namespace .k-container__sub:first-child {
+    padding-right: 16px;
     padding-left: 8px;
   }
-  [dir="rtl"] .k-ui-namespace .k-container__sub:last-child {
+  [dir="rtl"] .k-ui-namespace .k-container__sub:last-child:not(:first-child) {
+    padding-left: 16px;
     padding-right: 8px;
   }
 }
@@ -4327,6 +4334,10 @@ body.k-is-resizing {
 
 .k-ui-namespace .k-alert:last-child {
   margin-bottom: 0;
+}
+
+[dir="rtl"] .k-ui-namespace .k-alert {
+  padding: 12px 12px 12px 40px;
 }
 
 .k-ui-namespace .k-alert a {
@@ -5487,6 +5498,35 @@ fieldset[disabled] .k-ui-namespace .k-button--danger.k-has-focus {
   color: white;
 }
 
+.k-ui-namespace .k-card--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.k-ui-namespace .k-card--flex .k-card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.k-ui-namespace .k-card--flex .k-card__flex-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
 .k-ui-namespace .cke_chrome.cke_chrome,
 .k-ui-namespace .cke_inner.cke_inner,
 .k-ui-namespace .cke_contents.cke_contents {
@@ -6216,7 +6256,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 6px;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-form-control, .k-ui-namespace .k-input-group--large > .select2-container--bootstrap .select2-selection--single, .k-ui-namespace .k-input-group--large > .k-input-group__addon, .k-ui-namespace .k-input-group--large > .k-input-group__button > .k-button, .k-ui-namespace .k-input-group--large > .k-input-group__button > .btn {
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-form-control,
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .select2-container--bootstrap .select2-selection--single,
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-input-group__addon,
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-input-group__button > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group--large > .k-input-group__button > .btn {
   border-radius: 6px;
 }
 
@@ -6250,7 +6294,11 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-radius: 3px;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-form-control, .k-ui-namespace .k-input-group--small > .select2-container--bootstrap .select2-selection--single, .k-ui-namespace .k-input-group--small > .k-input-group__addon, .k-ui-namespace .k-input-group--small > .k-input-group__button > .k-button, .k-ui-namespace .k-input-group--small > .k-input-group__button > .btn {
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-form-control,
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .select2-container--bootstrap .select2-selection--single,
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-input-group__addon,
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-input-group__button > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group--small > .k-input-group__button > .btn {
   border-radius: 3px;
 }
 
@@ -6328,36 +6376,34 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   vertical-align: middle;
 }
 
-.k-ui-namespace .k-input-group .k-form-control:first-child,
-.k-ui-namespace .k-input-group__addon:first-child,
-.k-ui-namespace .k-input-group__button:first-child > .k-button,
-.k-ui-namespace .k-input-group__button:first-child > .btn,
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button,
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group > .btn,
-.k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle,
-.k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
-.k-ui-namespace .k-input-group__button:last-child > .btn:not(:last-child):not(.k-dropdown__toggle),
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button,
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .btn {
+html:not([dir="rtl"]) .k-input-group .k-form-control:first-child,
+html:not([dir="rtl"]) .k-input-group__addon:first-child,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .btn,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group > .btn,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-dropdown__toggle,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
+html:not([dir="rtl"]) .k-input-group__button:last-child > .btn:not(:last-child):not(.k-dropdown__toggle),
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:first-child,
-[dir="rtl"] .k-ui-namespace .k-input-group__addon:first-child,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .btn,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .btn,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child):not(.k-dropdown__toggle),
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .btn:not(:last-child):not(.k-dropdown__toggle),
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .btn {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:last-child,
+[dir="rtl"] .k-ui-namespace .k-input-group__addon:last-child,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .btn,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .btn,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child):not(.k-dropdown__toggle),
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .btn:not(:first-child):not(.k-dropdown__toggle),
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .k-ui-namespace .k-input-group__addon:first-child {
@@ -6369,36 +6415,34 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   border-left: none;
 }
 
-.k-ui-namespace .k-input-group .k-form-control:last-child,
-.k-ui-namespace .k-input-group__addon:last-child,
-.k-ui-namespace .k-input-group__button:last-child > .k-button,
-.k-ui-namespace .k-input-group__button:last-child > .btn,
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button,
-.k-ui-namespace .k-input-group__button:last-child > .k-button-group > .btn,
-.k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle,
-.k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child),
-.k-ui-namespace .k-input-group__button:first-child > .btn:not(:first-child),
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button,
-.k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .btn {
+html:not([dir="rtl"]) .k-input-group .k-form-control:last-child,
+html:not([dir="rtl"]) .k-input-group__addon:last-child,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .btn,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-button-group > .btn,
+html:not([dir="rtl"]) .k-input-group__button:last-child > .k-dropdown__toggle,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button:not(:first-child),
+html:not([dir="rtl"]) .k-input-group__button:first-child > .btn:not(:first-child),
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button,
+html:not([dir="rtl"]) .k-input-group__button:first-child > .k-button-group:not(:first-child) > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:last-child,
-[dir="rtl"] .k-ui-namespace .k-input-group__addon:last-child,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .btn,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group > .btn,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-dropdown__toggle,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button:not(:first-child),
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .btn:not(:first-child),
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .k-button,
-[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group:not(:first-child) > .btn {
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+[dir="rtl"] .k-ui-namespace .k-input-group .k-form-control:first-child,
+[dir="rtl"] .k-ui-namespace .k-input-group__addon:first-child,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .btn,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-button-group > .btn,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:first-child > .k-dropdown__toggle,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button:not(:last-child),
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .btn:not(:last-child),
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .k-button,
+[dir="rtl"] .k-ui-namespace .k-input-group__button:last-child > .k-button-group:not(:last-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .k-ui-namespace .k-input-group__addon:last-child {
@@ -8086,7 +8130,7 @@ fieldset[disabled] .k-ui-namespace .k-form-control {
   float: left;
   /* 2 */
   padding: 6px 12px;
-  line-height: 5px 12px;
+  line-height: 18px;
   text-decoration: none;
   color: #3071a9;
   background-color: white;
@@ -12006,56 +12050,59 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 
 /* Tree
      ========================================================================== */
-.k-tree.k-tree {
+.k-tree {
   margin: 4px 0;
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.k-tree.k-tree:before, .k-tree.k-tree:after {
+.k-tree:before, .k-tree:after {
   display: table;
   content: " ";
 }
 
-.k-tree.k-tree:after {
+.k-tree:after {
   clear: both;
 }
 
-.k-tree.k-tree:last-child {
+.k-tree:last-child {
   margin-bottom: 0;
 }
 
-.k-tree.k-tree .jqtree-element {
-  padding: 0 4px 0 16px;
+.k-tree .jqtree-element {
+  padding: 0 12px 0 16px;
 }
 
-[dir="rtl"] .k-tree.k-tree .jqtree-element {
-  padding: 0 16px 0 4px;
+[dir="rtl"] .k-tree .jqtree-element {
+  padding: 0 16px 0 12px;
 }
 
-.k-tree.k-tree .jqtree-element:hover, .k-tree.k-tree .jqtree-element:focus {
+.k-tree .jqtree-element:hover, .k-tree .jqtree-element:focus {
   background: white;
 }
 
-.k-tree.k-tree > .jqtree-tree.jqtree-tree {
+.k-tree > .jqtree-tree {
   margin: 0;
   padding: 0;
 }
 
-.k-tree.k-tree > .jqtree-tree.jqtree-tree > .jqtree_common > .jqtree-element {
+.k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
   padding-left: 15px;
 }
 
-[dir="rtl"] .k-tree.k-tree > .jqtree-tree.jqtree-tree > .jqtree_common > .jqtree-element {
-  padding-left: 4px;
+[dir="rtl"] .k-tree > .jqtree-tree > .jqtree_common > .jqtree-element {
+  padding-left: 12px;
   padding-right: 15px;
 }
 
-.k-tree.k-tree .jqtree-selected > .jqtree-element {
+.k-tree .jqtree-selected > .jqtree-element {
   background: #3071a9;
   color: white;
 }
 
-.k-tree.k-tree .jqtree-selected:hover > .jqtree-element {
+.k-tree .jqtree-selected:hover > .jqtree-element {
   background: #2d699d;
 }
 
@@ -12064,24 +12111,23 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
 }
 
 [dir="rtl"] .k-sidebar-item .k-tree > .jqtree-tree > .jqtree-folder .jqtree-element {
-  padding-left: 4px;
+  padding-left: 12px;
   padding-right: 16px;
 }
 
-.jqtree-tree.jqtree-tree {
+.jqtree-tree {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  background: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   /* Reset default ul li styling */
 }
 
-.jqtree-tree.jqtree-tree:before, .jqtree-tree.jqtree-tree:after {
-  display: table;
-  content: " ";
-}
-
-.jqtree-tree.jqtree-tree:after {
-  clear: both;
-}
-
-.jqtree-tree.jqtree-tree, .jqtree-tree.jqtree-tree ul {
+.jqtree-tree ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -12091,17 +12137,22 @@ html:not([dir=rtl]) .k-no-padding-left.k-no-padding-left.k-no-padding-left {
   min-width: 100%;
 }
 
-.jqtree-tree.jqtree-tree:before, .jqtree-tree.jqtree-tree:after, .jqtree-tree.jqtree-tree ul:before, .jqtree-tree.jqtree-tree ul:after {
+.jqtree-tree ul:before, .jqtree-tree ul:after {
   display: table;
   content: " ";
 }
 
-.jqtree-tree.jqtree-tree:after, .jqtree-tree.jqtree-tree ul:after {
+.jqtree-tree ul:after {
   clear: both;
 }
 
-[dir="rtl"] .jqtree-tree.jqtree-tree, .jqtree-tree.jqtree-tree ul {
+[dir="rtl"] .jqtree-tree.jqtree-tree {
+  padding: 0;
+}
+
+[dir="rtl"] .jqtree-tree, [dir="rtl"] .jqtree-tree ul {
   float: right;
+  padding: 0;
 }
 
 .jqtree-folder:before, .jqtree-folder:after {
