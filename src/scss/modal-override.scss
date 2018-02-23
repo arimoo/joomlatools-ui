@@ -1,17 +1,17 @@
-/**
- * Modal overrides, we need bigger modals
- * ======================================
- */
+// ==========================================================================
+// Modal overrides, we need bigger modals
+// ==========================================================================
 
 
-/**
- * Global tools
- * ------------
- * Containing different libraries, variables, mixins and functions
- */
+// Global tools
+// ==========================================================================
+//
+// Containing different libraries, variables, mixins and functions
 
 @import "../../../kodekit-ui/src/scss/admin/core/tools";
 
+
+// Variables
 
 $modal-width: 1280px;
 $modal-height: 900px;
