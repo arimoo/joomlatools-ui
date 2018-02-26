@@ -1,6 +1,6 @@
 # Joomlatools UI
 
-**This is a first public preview. Things will change!**
+**This is a first public preview. Things might change!**
 
 [Joomlatools UI](https://www.joomlatools.com/developer/ui/) is a user interface development kit for the Joomla administrator. It follows a number of timeless design principles and is build using modern tools and methodologies.
 
